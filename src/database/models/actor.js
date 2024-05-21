@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       rating: {
-        type: DataTypes.DECIMAL(3,1),
+        type: DataTypes.DECIMAL(10,2),
       },
       favorite_movie_id: {
         type: DataTypes.INTEGER,

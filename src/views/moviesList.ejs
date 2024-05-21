@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= movies.title %> </title>
+    <title>listado de Generos</title>
     <link rel='stylesheet' href='/css/style.css' />
 
 </head>
+
 <body>
     <figure>
         <img src="/img/logo-DH.png" alt="Logo Digital House">
-    </figure>
+      </figure>
+      <%- include("./partials/header") %>
+      <br>
+    <h1>LISTADO DE PELICULAS</h1>
+    
+    <ul>
+        <% for( let i = 0; i < movies.length; i++ ) { %>
+        <li>
+            <a href="/movies/detail/<%= movies[i].id %>"><%= movies[i].title %></a>
+        </li>
+        <% } %>
 
-    <%- include("./partials/header") %>
-
-    <h1><%= movies.title %> </h1>    
-    <br>
-    <p>RATING: <%= movies.rating %> </p>
-    <p>AWARDS: <%= movies.awards %> </p>
-    <p>LENGTH: <%= movies.length + ' min'%> </p>
-    <p>RELEASE DATE: <%= movies.release_date %> </p>
-
+    </ul>
 </body>
 </html>

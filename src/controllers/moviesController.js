@@ -7,9 +7,7 @@ module.exports = {
     db.Movie.findAll()
     .then((movies) => {
 
-      res.render("moviesList",{
-        movies
-      })
+      res.render("moviesList",{movies})
 
     })
     .catch((err) => {
